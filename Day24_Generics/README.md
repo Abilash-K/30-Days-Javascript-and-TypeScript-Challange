@@ -1,35 +1,64 @@
 # Day 24 - Generics
 
-Master Generic types and functions!
+Master generic programming - write reusable, type-safe code!
 
-## Overview
+## Generic Functions
 
-Learn TypeScript concepts and best practices.
+```typescript
+function identity<T>(arg: T): T {
+    return arg;
+}
 
-## Key Topics
+const num = identity<number>(42);
+const str = identity<string>("hello");
+const auto = identity(true);  // Type inferred
+```
 
-- Core concepts
-- Practical examples
-- Type safety
-- Best practices
+## Generic Classes
 
-## Examples
+```typescript
+class Box<T> {
+    constructor(private value: T) {}
+    
+    getValue(): T {
+        return this.value;
+    }
+}
 
-See `examples.ts` for TypeScript examples.
+const numberBox = new Box<number>(123);
+const stringBox = new Box<string>("hello");
+```
 
-## Exercises
+## Generic Constraints
 
-Practice in `exercises.ts`.
+```typescript
+interface Lengthwise {
+    length: number;
+}
 
-## Solutions
+function logLength<T extends Lengthwise>(arg: T): void {
+    console.log(arg.length);
+}
 
-Solutions in `solutions.ts`.
+logLength("hello");  // ✓
+logLength([1, 2, 3]);  // ✓
+// logLength(123);  // ✗ Error
+```
+
+## Multiple Type Parameters
+
+```typescript
+function pair<T, U>(first: T, second: U): [T, U] {
+    return [first, second];
+}
+
+const result = pair<string, number>("age", 25);
+```
 
 ## Resources
 
-- TypeScript Handbook
-- TypeScript Documentation
+- [TypeScript Generics](https://www.typescriptlang.org/docs/handbook/generics.html)
 
 ---
 
-**Next:** Day 25
+**Next:** [Day 25 - Advanced Types](../Day25_Advanced_Types/README.md)
