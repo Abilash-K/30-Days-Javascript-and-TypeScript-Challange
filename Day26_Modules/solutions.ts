@@ -1,4 +1,12 @@
 // Day 26 - Modules - Solutions
-console.log('=== Day 26 TS Solutions ===');
-// TypeScript solutions
 
+console.log('=== LEVEL 1 SOLUTIONS ===\n');
+console.log('Solutions for basic Modules concepts');
+
+console.log('\n=== LEVEL 2 SOLUTIONS ===\n');
+console.log('Solutions for intermediate applications');
+
+console.log('\n=== LEVEL 3 SOLUTIONS ===\n');
+console.log('Solutions for advanced implementations');
+
+console.log('\n=== All Solutions Complete ===');

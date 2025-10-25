@@ -1,35 +1,64 @@
 # Day 25 - Advanced Types
 
-Master Union, intersection, and advanced types!
+Master advanced TypeScript type features!
 
-## Overview
+## Union Types
 
-Learn TypeScript concepts and best practices.
+```typescript
+type Status = "success" | "error" | "loading";
+type ID = string | number;
 
-## Key Topics
+function printID(id: ID): void {
+    if (typeof id === "string") {
+        console.log(id.toUpperCase());
+    } else {
+        console.log(id.toFixed(2));
+    }
+}
+```
 
-- Core concepts
-- Practical examples
-- Type safety
-- Best practices
+## Intersection Types
 
-## Examples
+```typescript
+type Person = { name: string };
+type Employee = { employeeId: number };
+type Staff = Person & Employee;
 
-See `examples.ts` for TypeScript examples.
+const staff: Staff = {
+    name: "John",
+    employeeId: 123
+};
+```
 
-## Exercises
+## Mapped Types
 
-Practice in `exercises.ts`.
+```typescript
+type Readonly<T> = {
+    readonly [P in keyof T]: T[P];
+};
 
-## Solutions
+type Optional<T> = {
+    [P in keyof T]?: T[P];
+};
+```
 
-Solutions in `solutions.ts`.
+## Conditional Types
 
-## Resources
+```typescript
+type IsString<T> = T extends string ? true : false;
 
-- TypeScript Handbook
-- TypeScript Documentation
+type A = IsString<string>;  // true
+type B = IsString<number>;  // false
+```
+
+## Template Literal Types
+
+```typescript
+type Greeting = `Hello ${string}`;
+type Method = "GET" | "POST";
+type Endpoint = `/api/${string}`;
+```
 
 ---
 
-**Next:** Day 26
+**Next:** [Day 26 - Modules](../Day26_Modules/README.md)

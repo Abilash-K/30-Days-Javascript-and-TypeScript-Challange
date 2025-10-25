@@ -1,21 +1,21 @@
 # Day 27 - Decorators
 
-Master TypeScript decorators!
+Master TypeScript Decorators!
 
 ## Overview
 
-Learn TypeScript concepts and best practices.
+Learn advanced concepts and apply them effectively.
 
 ## Key Topics
 
 - Core concepts
-- Practical examples
-- Type safety
+- Practical applications
 - Best practices
+- Real-world examples
 
 ## Examples
 
-See `examples.ts` for TypeScript examples.
+See `examples.ts` for code examples.
 
 ## Exercises
 
@@ -23,12 +23,7 @@ Practice in `exercises.ts`.
 
 ## Solutions
 
-Solutions in `solutions.ts`.
-
-## Resources
-
-- TypeScript Handbook
-- TypeScript Documentation
+Complete solutions in `solutions.ts`.
 
 ---
 
